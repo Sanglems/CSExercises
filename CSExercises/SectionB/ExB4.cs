@@ -14,14 +14,18 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+            Console.WriteLine("Enter the temperature in Centigrade");
+            string input = Console.ReadLine();
+            double inputInCentigrade = Convert.ToDouble(input);
+            double outputInFarehneit = ConvertToFahrenheit(inputInCentigrade);
+            Console.WriteLine("{0} degree on Centigrade scale is equal to {1} on Farehneit scale",inputInCentigrade,outputInFarehneit);
 
         }
 
         public static double ConvertToFahrenheit(double c)
         {
-            //YOUR CODE HERE - convert celcius to fahrenheit
-            return 0;
+            double f = 1.8 * c + 32;
+            return f;
 
         }
     }

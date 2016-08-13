@@ -16,13 +16,20 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+            Console.WriteLine("Enter the distance travelled in Km");
+            string input = Console.ReadLine();
+            double distanceTravelled = Convert.ToDouble(input);
+            double fare = CalculateFare(distanceTravelled);
+            Console.WriteLine("The total fare is ${0:0.0}", fare);
         }
 
         public static double CalculateFare(double distance)
         {
-            //YOUR CODE HERE
-            return 0;
+            double output = 2.40 + distance * 0.4;
+            double output1 = Math.Ceiling(10 * output);
+            double fare = output1 / 10;
+           
+            return fare;
 
         }
     }

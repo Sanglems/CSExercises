@@ -18,14 +18,20 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+            Console.WriteLine("Enter the salary in dollsars");
+            string input = Console.ReadLine();
+            double salary = Convert.ToDouble(input);
+            double income = CalculateIncome(salary);
+            Console.WriteLine("The total income is {0:c}",income);
+
+
 
         }
 
-        public static string CalculateIncome(string salaryStr)
-        {
-            //YOUR CODE HERE
-            return null;
+        public static double CalculateIncome(double salaryStr)
+        { 
+            double income = 1.13 * salaryStr;
+            return income;
         }
     }
 }

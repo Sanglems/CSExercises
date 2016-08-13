@@ -20,8 +20,10 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            string inputStr = Console.ReadLine();
-            double inputDbl = Convert.ToDouble(inputStr);
+            Console.WriteLine("Enter the number");
+            String input = Console.ReadLine();
+            double input1 = Convert.ToDouble(input);
+            Console.WriteLine("Output= {0:0.00}", input1);
 
             //YOUR CODE HERE
 
