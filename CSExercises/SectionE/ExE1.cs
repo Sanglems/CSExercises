@@ -18,6 +18,7 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
+
             Console.Write("Enter a number: ");
             int n = Convert.ToInt32(Console.ReadLine());
 
@@ -30,16 +31,24 @@ namespace CSExercises
 
         public static int CalculateFactorialInc(int n)
         {
-            //YOUR CODE HERE
-            return 0;
+            int fact = 1;
+            for (int i = 1; i<=n; i++)
+            {
+                fact = fact * i;
+            }
+            return fact;
 
 
         }
 
         public static int CalculateFactorialDec(int n)
         {
-            //YOUR CODE HERE
-            return 0;
+            int fact = 1;
+            for (int i = n; i >= 1; i--)
+            {
+                fact = fact * i;
+            }
+            return fact;
 
 
         }

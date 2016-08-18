@@ -13,14 +13,15 @@ namespace CSExercises
 
     public class ExG1
     {
-        static char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
+        static string[] vowels = { "a", "e", "i", "o", "u" };
 
         public static void Main(string[] args)
         {
             Console.Write("Please enter a phrase: ");
             string phrase = Console.ReadLine();
+            int CounterVowels1 = CountVowels(phrase);
 
-            Console.WriteLine("Total number of vowels: " + CountVowels(phrase));
+            Console.WriteLine("Total number of vowels: " + CounterVowels1);
 
             int[] vowelCount = CountIndividualVowels(phrase);
             for (int i = 0; i < 5; i++)
@@ -31,8 +32,20 @@ namespace CSExercises
 
         public static int CountVowels(string phrase)
         {
-            //YOUR CODE HERE
-            return 0;
+            int n = phrase.Length;
+            string phrase1 = phrase.ToLower();
+            int counter = 0;
+            for (int i = 0; i < n; i++)
+            {
+                string r = phrase1.Substring(i, 1);
+
+                if ((r.Equals("a")) || (r.Equals("e")) || (r.Equals("i")) || (r.Equals("o")) || (r.Equals("u")))
+                {
+                    counter++;
+                }
+
+            }
+            return counter;
 
 
         }
@@ -40,11 +53,30 @@ namespace CSExercises
         public static int[] CountIndividualVowels(string phrase)
         {
             int[] vowelCount = new int[5];
-            //YOUR CODE HERE
+            vowelCount[0] = 0;
+            vowelCount[1] = 0;
+            vowelCount[2] = 0;
+            vowelCount[3] = 0;
+            vowelCount[4] = 0;
 
+            int n = phrase.Length;
+            string phrase1 = phrase.ToLower();
 
+            for (int k = 0; k < 5; k++)
+            {
 
+                for (int i = 0; i < n; i++)
+                {
+                    string r = phrase1.Substring(i, 1);
+
+                    if (r.Equals(vowels[k]))
+                    {
+                        vowelCount[k]++;
+                    }
+                }
+                    
+                }
             return vowelCount;
         }
+        }
     }
-}

@@ -17,15 +17,35 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+            bool result;
+            Console.WriteLine("Enter the 3-digit number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            if((number < 100) || (number > 999))
+            { Console.WriteLine("Input is not three digit number");
+            }
+            else
+            {
+                result = IsArmstrongNumber(number);
+                Console.WriteLine("{0} is Armstrong number is {1} statement", number, result);
 
+            }
         }
 
 
         public static bool IsArmstrongNumber(int n)
         {
-            //YOUR CODE HERE
-            return false;
+        
+            int a, b, c;
+            a = n % 10;
+            b = ((n % 100) - a) / 10;
+            c = n / 100;
+            if((a*a*a+b*b*b+c*c*c) == n)
+            { return true;
+            }
+            else
+            { return false;
+            }
+
 
         }
     }

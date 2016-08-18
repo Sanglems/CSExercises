@@ -29,18 +29,33 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE - get user input, call the function and return the discounted price
-
-
+            Console.WriteLine("Enter the quantity of TV you need to be order");
+            int tv = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the quantity of DVD you need to be order");
+            int dvd = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the quantity of MP3 you need to be order");
+            int mp3 = Convert.ToInt32(Console.ReadLine());
+            double discountedPrice = CalculateTotalPrice(tv, dvd, mp3);
+            Console.WriteLine("The discounted price is {0}", discountedPrice);
 
         }
 
         public static double CalculateTotalPrice(int tvQty, int dvdQty, int mp3Qty)
         {
-            //YOUR CODE HERE
-            return 0;
-
-
+            double discountedPrice;
+            int tvdvdprice = 900 * tvQty + 500 * dvdQty;
+            int mp3price = 700 * mp3Qty;
+            if (tvdvdprice <= 5000)
+            { discountedPrice = tvdvdprice + mp3price;
+            }
+            else if ((tvdvdprice > 5000) && (tvdvdprice <= 10000))
+            {
+                discountedPrice = 0.9 * tvdvdprice + mp3price; 
+            }
+            else
+            { discountedPrice = 0.85 * tvdvdprice + mp3price;
+            }
+            return discountedPrice;
 
         }
     }

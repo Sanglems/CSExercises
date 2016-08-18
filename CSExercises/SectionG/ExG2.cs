@@ -18,8 +18,9 @@ namespace CSExercises
         {
             Console.Write("Please enter a phrase: ");
             string phrase = Console.ReadLine();
+            bool result = IsPalindrome(phrase);
 
-            if (IsPalindrome(phrase))
+            if (result)
             {
                 Console.WriteLine("Palindrome");
             }
@@ -31,8 +32,30 @@ namespace CSExercises
 
         public static bool IsPalindrome(string phrase)
         {
-            //YOUR CODE HERE
-            return false;
+            string newPhrase = null;
+            int n = phrase.Length;
+            string phrase1 = phrase.ToLower();
+            char[] c = new char[] { '.', ' ' };
+            string[] s = phrase1.Split(c);
+            for(int i= 0;i<s.Length;i++)
+            {
+              newPhrase = newPhrase + s[i] ;
+            }
+            char[] charArray = newPhrase.ToCharArray();
+            Array.Reverse(charArray);
+            string revPhrase = new string(charArray);
+
+
+            if (newPhrase.Equals(revPhrase))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
 
 
 
@@ -40,3 +63,4 @@ namespace CSExercises
         }
     }
 }
+
