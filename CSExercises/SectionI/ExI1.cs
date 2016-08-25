@@ -22,11 +22,40 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            Console.Write("Enter the amount: ");
+            Console.WriteLine("Enter the amount between 0.05 to 3.50");
             double amount = Convert.ToDouble(Console.ReadLine());
-
-            //YOUR CODE HERE
-
+            int amountInCents = Convert.ToInt16(100 * amount);
+            int hundredCent = 0;
+            int fiftyCent = 0;
+            int twentyCent = 0;
+            int tenCent = 0;
+            int fiveCent = 0;
+            if(amountInCents>=100)
+            {
+                hundredCent = amountInCents / 100;
+                amountInCents = amountInCents % 100;
+            }
+            if (amountInCents >= 50)
+            {
+                fiftyCent = amountInCents / 50;
+                amountInCents = amountInCents % 50;
+            }
+            if (amountInCents >= 20)
+            {
+                twentyCent = amountInCents / 20;
+                amountInCents = amountInCents % 20;
+            }
+            if (amountInCents >= 10)
+            {
+                tenCent = amountInCents / 10;
+                amountInCents = amountInCents % 10;
+            }
+            if (amountInCents >= 5)
+            {
+                fiveCent = amountInCents / 5;
+                amountInCents = amountInCents % 5;
+            }
+            Console.WriteLine("{0:c} : {1} 100-cents, {2} 50-cents, {3} 20-cents, {4} 10-cents and {5} 5-cents ", amount, hundredCent, fiftyCent, twentyCent, tenCent, fiveCent);
 
         }
     }

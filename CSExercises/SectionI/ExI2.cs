@@ -41,12 +41,34 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
-
-
-
-
+            int i;
+          int[] baseArray = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            int[] sampleArray = new int[] { 1, 1, 2, 3, 4, 5, 6, 7, 8, 9 ,
+                                            2, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+                                            3, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+                                            4, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+                                            5, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            Console.WriteLine("Number\t\t\tCount\t\t\tHistogram");
+            Console.WriteLine("-----------------------------------------------------------");
+            for(i = 0; i< baseArray.Length; i++)
+            {
+                int count = 0;
+                for (int k = 0; k < sampleArray.Length; k++)
+                {
+                    if (baseArray[i] == sampleArray[k])
+                    {
+                        count++;
+                    }
+                }
+                    Console.Write("{0}\t\t\t{1}\t\t\t",i, count);
+                        for(int l=0; l<count; l++)
+                    {
+                        Console.Write("*");
+                    }
+                    Console.WriteLine();
+                }
+            }
 
         }
     }
-}
+
